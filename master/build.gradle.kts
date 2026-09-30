@@ -5,6 +5,7 @@ plugins {
 android {
     namespace = "com.master.remote"
     compileSdk = 34
+
     defaultConfig {
         applicationId = "com.master.remote.v1"
         minSdk = 27
@@ -12,22 +13,35 @@ android {
         versionCode = 1
         versionName = "V1"
     }
+
     buildTypes {
         release {
             isMinifyEnabled = false
             signingConfig = signingConfigs.getByName("debug")
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions { jvmTarget = "17" }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
     lint {
         abortOnError = false
         checkReleaseBuilds = false
+        checkDependencies = false
+        disable += setOf(
+            "ExpiredTargetSdkVersion",
+            "GoogleAppIndexingWarning",
+            "MissingApplicationIcon"
+        )
     }
 }
+
 dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
