@@ -1,0 +1,26 @@
+name: Build APKs
+on:
+  push: { branches: [ main ] }
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: 'temurin', java-version: '17' }
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v3
+        with: { gradle-version: 8.2 }
+      - name: Build Master
+        run: gradle :master:assembleRelease --no-daemon --stacktrace
+      - name: Build Slave
+        run: gradle :slave:assembleRelease --no-daemon --stacktrace
+      - uses: actions/upload-artifact@v4
+        with:
+          name: master-apk
+          path: master/build/outputs/apk/release/*.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: slave-apk
+          path: slave/build/outputs/apk/release/*.apk

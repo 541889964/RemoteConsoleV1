@@ -1,0 +1,13 @@
+<resources>
+    <color name="bg_primary">#0A0E1A</color>
+    <color name="bg_card">#131A2E</color>
+    <color name="stroke">#1E2A4A</color>
+    <color name="text_primary">#F0F2F8</color>
+    <color name="text_secondary">#B4BCD4</color>
+    <color name="text_tertiary">#6B7AA8</color>
+    <color name="text_quaternary">#4A5578</color>
+    <color name="accent">#4A6BFF</color>
+    <color name="accent_purple">#7A5BFF</color>
+    <color name="danger">#E94560</color>
+    <color name="success">#3DD68C</color>
+</resources>
