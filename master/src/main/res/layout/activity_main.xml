@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0A0E1A">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView android:text="控制台 V1"
+                android:textSize="24sp" android:textStyle="bold"
+                android:textColor="#F0F2F8"/>
+            <TextView android:text="局域网设备发现"
+                android:textSize="12sp" android:textColor="#6B7AA8"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvCount"
+            android:text="0" android:textSize="28sp"
+            android:textStyle="bold" android:textColor="#4A6BFF"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="#131A2E"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView android:text="扫描局域网"
+                    android:textSize="16sp" android:textStyle="bold"
+                    android:textColor="#F0F2F8"/>
+                <TextView android:text="点击右侧按钮发现设备"
+                    android:textSize="11sp" android:textColor="#6B7AA8"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/btnScan"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:gravity="center"
+                android:background="#4A6BFF"
+                android:clickable="true"
+                android:focusable="true">
+                <TextView android:text="🔍" android:textSize="24sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView android:text="发现设备"
+        android:textSize="14sp" android:textStyle="bold"
+        android:textColor="#B4BCD4" android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp" android:layout_marginBottom="12dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDevices"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:clipToPadding="false"/>
+</LinearLayout>
