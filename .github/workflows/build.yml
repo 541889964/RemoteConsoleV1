@@ -1,26 +1,72 @@
 name: Build APKs
+
 on:
-  push: { branches: [ main ] }
+  push:
+    branches: [ main ]
   workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
-        with: { distribution: 'temurin', java-version: '17' }
-      - uses: android-actions/setup-android@v3
-      - uses: gradle/actions/setup-gradle@v3
-        with: { gradle-version: 8.2 }
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Accept Android Licenses
+        run: |
+          yes | sdkmanager --licenses > /dev/null 2>&1 || true
+          echo "Licenses accepted"
+
+      - name: Install SDK Components
+        run: |
+          sdkmanager "platform-tools" \
+                     "platforms;android-34" \
+                     "build-tools;34.0.0" \
+                     "platforms;android-27" \
+                     "build-tools;27.0.3"
+          echo "SDK components installed"
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.2'
+
       - name: Build Master
-        run: gradle :master:assembleRelease --no-daemon --stacktrace
+        run: gradle :master:assembleRelease --no-daemon
+
       - name: Build Slave
-        run: gradle :slave:assembleRelease --no-daemon --stacktrace
-      - uses: actions/upload-artifact@v4
+        run: gradle :slave:assembleRelease --no-daemon
+
+      - name: Prepare Outputs
+        run: |
+          mkdir -p outputs
+          find master -name "*.apk" -path "*release*" -exec cp {} outputs/master-V1.apk \;
+          find slave  -name "*.apk" -path "*release*" -exec cp {} outputs/slave-V1.apk \;
+          ls -lh outputs/
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: master-apk
-          path: master/build/outputs/apk/release/*.apk
-      - uses: actions/upload-artifact@v4
+          name: RemoteConsoleV1
+          path: outputs/*.apk
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: slave-apk
-          path: slave/build/outputs/apk/release/*.apk
+          tag_name: build-${{ github.run_number }}
+          name: "V1 Build #${{ github.run_number }}"
+          files: outputs/*.apk
