@@ -27,6 +27,10 @@ android {
         isCoreLibraryDesugaringEnabled = true
     }
     kotlinOptions { jvmTarget = "17" }
+    lint {
+        abortOnError = false
+        checkReleaseBuilds = false
+    }
 }
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")

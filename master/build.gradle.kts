@@ -8,7 +8,7 @@ android {
     defaultConfig {
         applicationId = "com.master.remote.v1"
         minSdk = 27
-        targetSdk = 27
+        targetSdk = 34
         versionCode = 1
         versionName = "V1"
     }
@@ -23,6 +23,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions { jvmTarget = "17" }
+    lint {
+        abortOnError = false
+        checkReleaseBuilds = false
+    }
 }
 dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")

@@ -33,7 +33,6 @@ jobs:
             echo "ANDROID_SDK_ROOT=$HOME/android-sdk" >> $GITHUB_ENV
             export ANDROID_HOME="$HOME/android-sdk"
           fi
-          echo "SDK: $ANDROID_HOME"
           if [ ! -d "$ANDROID_HOME/cmdline-tools/latest" ]; then
             cd /tmp
             rm -rf cmdline-tools
@@ -49,7 +48,6 @@ jobs:
         run: |
           set -e
           export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
-          sdkmanager --version
           yes | sdkmanager --licenses > /dev/null 2>&1 || true
           sdkmanager --install "platform-tools" "platforms;android-34" "build-tools;34.0.0" "platforms;android-27" "build-tools;27.0.3"
 
@@ -58,9 +56,9 @@ jobs:
           gradle-version: '8.2'
 
       - name: Build Master
-        run: gradle :master:assembleRelease --no-daemon
+        run: gradle :master:assembleRelease --no-daemon --stacktrace
       - name: Build Slave
-        run: gradle :slave:assembleRelease --no-daemon
+        run: gradle :slave:assembleRelease --no-daemon --stacktrace
 
       - name: Prepare Outputs
         run: |
