@@ -44,10 +44,10 @@ jobs:
         with: { gradle-version: '8.2' }
       - name: Build Master
         run: gradle :master:assembleRelease --no-daemon
-        continue-on-error: true
+        
       - name: Build Slave
         run: gradle :slave:assembleRelease --no-daemon
-        continue-on-error: true
+        
       - name: Prepare
         run: |
           mkdir -p outputs
