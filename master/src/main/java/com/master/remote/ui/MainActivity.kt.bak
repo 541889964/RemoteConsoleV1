@@ -13,7 +13,7 @@ import com.master.remote.net.DeviceInfo
 import com.master.remote.net.MdnsDiscovery
 
 class MainActivity : AppCompatActivity() {
-    private val devices = ArrayList<DeviceInfo>(listOf(DeviceInfo("本机测试", "127.0.0.1", 8888)))
+    private val devices = ArrayList<DeviceInfo>()
     private var adapter: DeviceAdapter? = null
     private var discovery: MdnsDiscovery? = null
 
