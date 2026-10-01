@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#0A0E1A" android:scrollbars="none">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingTop="32dp" android:paddingBottom="28dp">
+            <FrameLayout android:layout_width="56dp" android:layout_height="56dp"
+                android:background="@drawable/bg_icon_blue">
+                <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:gravity="center" android:text="🔒" android:textSize="26sp"/>
+            </FrameLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginStart="16dp" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Remote Slave V1"
+                    android:textSize="22sp" android:textStyle="bold" android:textColor="#F0F2F8"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="实时屏幕 · 25 大功能 · Android 5.0+"
+                    android:textSize="11sp" android:textColor="#6B7AA8" android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:cardBackgroundColor="#141B2E" app:cardCornerRadius="20dp"
+            app:cardElevation="0dp" android:layout_marginBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="22dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <View android:layout_width="8dp" android:layout_height="8dp"
+                        android:background="@drawable/bg_status_dot"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="运行状态" android:textSize="12sp"
+                        android:textColor="#6B7AA8" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+                <TextView android:id="@+id/tvStatus"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="加载中..." android:textSize="13sp"
+                    android:textColor="#F0F2F8" android:lineSpacingExtra="6dp"
+                    android:layout_marginTop="14dp" android:fontFamily="monospace"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="权限配置" android:textSize="12sp"
+            android:textColor="#6B7AA8" android:layout_marginBottom="12dp"/>
+
+        <androidx.cardview.widget.CardView android:id="@+id/btnAcc"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="#141B2E" app:cardCornerRadius="16dp" app:cardElevation="0dp"
+            android:clickable="true" android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="18dp" android:gravity="center_vertical">
+                <FrameLayout android:layout_width="42dp" android:layout_height="42dp"
+                    android:background="@drawable/bg_icon_blue">
+                    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:gravity="center" android:text="🔧" android:textSize="20sp"/>
+                </FrameLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="1. 无障碍服务" android:textSize="15sp"
+                        android:textStyle="bold" android:textColor="#F0F2F8"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="必需 · 用于手势注入/文字输入/按键" android:textSize="11sp"
+                        android:textColor="#6B7AA8" android:layout_marginTop="3dp"/>
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="去开启" android:textSize="12sp"
+                    android:textColor="#4A6BFF" android:textStyle="bold"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView android:id="@+id/btnScreen"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="#141B2E" app:cardCornerRadius="16dp" app:cardElevation="0dp"
+            android:clickable="true" android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="18dp" android:gravity="center_vertical">
+                <FrameLayout android:layout_width="42dp" android:layout_height="42dp"
+                    android:background="@drawable/bg_icon_orange">
+                    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:gravity="center" android:text="📺" android:textSize="20sp"/>
+                </FrameLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="2. 屏幕捕获权限" android:textSize="15sp"
+                        android:textStyle="bold" android:textColor="#F0F2F8"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="必需 · 用于实时屏幕共享（0.3s 一帧）" android:textSize="11sp"
+                        android:textColor="#6B7AA8" android:layout_marginTop="3dp"/>
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="去授权" android:textSize="12sp"
+                    android:textColor="#F5A524" android:textStyle="bold"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView android:id="@+id/btnBat"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="#141B2E" app:cardCornerRadius="16dp" app:cardElevation="0dp"
+            android:clickable="true" android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="18dp" android:gravity="center_vertical">
+                <FrameLayout android:layout_width="42dp" android:layout_height="42dp"
+                    android:background="@drawable/bg_icon_purple">
+                    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:gravity="center" android:text="🔋" android:textSize="20sp"/>
+                </FrameLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="3. 电池优化豁免" android:textSize="15sp"
+                        android:textStyle="bold" android:textColor="#F0F2F8"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="推荐 · 提高后台存活率" android:textSize="11sp"
+                        android:textColor="#6B7AA8" android:layout_marginTop="3dp"/>
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="去设置" android:textSize="12sp"
+                    android:textColor="#7A5BFF" android:textStyle="bold"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView android:id="@+id/btnAutostart"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="#141B2E" app:cardCornerRadius="16dp" app:cardElevation="0dp"
+            android:clickable="true" android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="18dp" android:gravity="center_vertical">
+                <FrameLayout android:layout_width="42dp" android:layout_height="42dp"
+                    android:background="@drawable/bg_icon_green">
+                    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:gravity="center" android:text="🚀" android:textSize="20sp"/>
+                </FrameLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="4. 自启动管理" android:textSize="15sp"
+                        android:textStyle="bold" android:textColor="#F0F2F8"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="厂商 ROM 需要 · 提升保活" android:textSize="11sp"
+                        android:textColor="#6B7AA8" android:layout_marginTop="3dp"/>
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="去设置" android:textSize="12sp"
+                    android:textColor="#3DD68C" android:textStyle="bold"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView android:id="@+id/btnStatus"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:cardBackgroundColor="#141B2E" app:cardCornerRadius="16dp" app:cardElevation="0dp"
+            android:clickable="true" android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="18dp" android:gravity="center_vertical">
+                <FrameLayout android:layout_width="42dp" android:layout_height="42dp"
+                    android:background="@drawable/bg_icon_blue">
+                    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:gravity="center" android:text="🔄" android:textSize="20sp"/>
+                </FrameLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="刷新状态" android:textSize="15sp"
+                        android:textStyle="bold" android:textColor="#F0F2F8"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="重新检查权限" android:textSize="11sp"
+                        android:textColor="#6B7AA8" android:layout_marginTop="3dp"/>
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="›" android:textSize="22sp" android:textColor="#4A6BFF"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="提示：第 1、2 项必须开启，才能被主控端连接并实时查看屏幕"
+            android:textSize="11sp" android:textColor="#4A5578"
+            android:lineSpacingExtra="4dp" android:layout_marginTop="24dp"/>
+    </LinearLayout>
+</ScrollView>

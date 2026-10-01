@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Remote Slave V1</string>
+    <string name="acc_desc">远程控制服务，请授予无障碍权限</string>
+</resources>

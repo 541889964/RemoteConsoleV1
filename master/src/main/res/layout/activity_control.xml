@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#000000">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="52dp"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:background="#141B2E" android:paddingStart="16dp" android:paddingEnd="16dp">
+        <TextView android:id="@+id/tvTitle"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Device" android:textSize="14sp"
+            android:textStyle="bold" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/tvFps"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="FPS: 0" android:textSize="10sp"
+            android:textColor="#3DD68C" android:layout_marginEnd="8dp"/>
+        <TextView android:id="@+id/tvStatus"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="连接中" android:textSize="10sp"
+            android:textColor="#3DD68C" android:layout_marginEnd="8dp"/>
+        <TextView android:id="@+id/btnClose"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="✕" android:textSize="18sp"
+            android:textColor="#F0F2F8" android:padding="6dp"/>
+    </LinearLayout>
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:background="#000000">
+        <ImageView android:id="@+id/screenView"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:scaleType="fitCenter" android:contentDescription="screen"/>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center" android:orientation="vertical" android:gravity="center">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="◉" android:textSize="60sp" android:textColor="#4A6BFF"/>
+            <TextView android:id="@+id/tvInfo"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="0.0.0.0:8888" android:textSize="11sp"
+                android:textColor="#6B7AA8" android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- 行 1 -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+        android:orientation="horizontal" android:background="#141B2E"
+        android:gravity="center_vertical">
+        <TextView android:id="@+id/btnBack" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="◁" android:textSize="16sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnHome" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="○" android:textSize="16sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnRecents" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="□" android:textSize="16sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnVolUp" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="🔊+" android:textSize="14sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnVolDown" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="🔉-" android:textSize="14sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnMute" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="🔇" android:textSize="14sp" android:textColor="#F0F2F8"/>
+    </LinearLayout>
+
+    <!-- 行 2 -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+        android:orientation="horizontal" android:background="#101728"
+        android:gravity="center_vertical">
+        <TextView android:id="@+id/btnBrUp" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="☀+" android:textSize="14sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnBrDown" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="☀-" android:textSize="14sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnLock" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="🔒" android:textSize="14sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnScreenshot" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="📷" android:textSize="14sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnPaste" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="📋" android:textSize="14sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnText" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="⌨" android:textSize="14sp" android:textColor="#F0F2F8"/>
+    </LinearLayout>
+
+    <!-- 行 3 -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+        android:orientation="horizontal" android:background="#141B2E"
+        android:gravity="center_vertical">
+        <TextView android:id="@+id/btnRotate" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="🔄" android:textSize="14sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnQuality" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="🎨" android:textSize="14sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnFps" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="⚡" android:textSize="14sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnApps" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="📱" android:textSize="14sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnDeviceInfo" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="ℹ" android:textSize="14sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnScreenToggle" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="📺" android:textSize="14sp" android:textColor="#F0F2F8"/>
+    </LinearLayout>
+
+    <!-- 行 4（新增 5 大功能） -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+        android:orientation="horizontal" android:background="#101728"
+        android:gravity="center_vertical">
+        <TextView android:id="@+id/btnRestart" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="🔄重" android:textSize="12sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnVibrate" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="📳震" android:textSize="12sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnSpeak" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="🔊说" android:textSize="12sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnKeepOn" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="💡亮" android:textSize="12sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnKeyPower" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="⏻电" android:textSize="12sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnKeyEnter" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="⏎回" android:textSize="12sp" android:textColor="#F0F2F8"/>
+        <TextView android:id="@+id/btnKeyEsc" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center"
+            android:text="⎋退" android:textSize="12sp" android:textColor="#F0F2F8"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:gravity="center"
+    android:background="@drawable/bg_splash_gradient">
+
+    <FrameLayout android:layout_width="160dp" android:layout_height="160dp">
+        <View android:id="@+id/ringView"
+            android:layout_width="160dp" android:layout_height="160dp"
+            android:background="@drawable/bg_logo_circle"/>
+        <TextView android:id="@+id/tvLogo"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center" android:text="◉"
+            android:textSize="72sp" android:textColor="#FFFFFF"/>
+    </FrameLayout>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="REMOTE CONSOLE" android:textSize="22sp"
+        android:textStyle="bold" android:textColor="#F0F2F8"
+        android:letterSpacing="0.2" android:layout_marginTop="32dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="V1 · 实时屏幕 · 25 大功能" android:textSize="12sp"
+        android:textColor="#6B7AA8" android:layout_marginTop="8dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="正在启动..." android:textSize="11sp"
+        android:textColor="#4A5578" android:layout_marginTop="40dp"/>
+</LinearLayout>
